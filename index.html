@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>泰山職訓局-前端課程</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      transition: 0.5s;
+      font-family: "微軟正黑體";
+      /* border-sizing: borderbox; */
+    }
+
+    .container_small {
+      width: 100%;
+      padding: 0 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-size: 3vh;
+    }
+
+    .container_small img {
+      width: 80%;
+      /* height: 80%; */
+      vertical-align: middle;
+      text-align: center;
+      object-fit: cover;
+      object-position: center;
+      object-position: 52%;
+    }
+
+    .container_small .logo {
+      width: 70%;
+      object-position: center;
+      margin: 0 10%;
+    }
+
+    .card {
+      width: 100%;
+      padding: 15px;
+      /* text-align: center; */
+    }
+
+    h1 {
+      text-align: left;
+      margin: 1vh 0;
+      font-size: 5vw;
+      /* font-weight: 5000; */
+    }
+
+    .container_big {
+      /* display: flex; */
+      width: 100%;
+      /* height: 100%; */
+      padding: 0 15px;
+      font-size: 15px;
+      position: relative;
+      /* background-color: palegreen; */
+      /* overflow: hidden; */
+
+    }
+
+    .container_big .card {
+      width: 13%;
+      /* height: 300px; */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      /* background: pink; */
+    }
+
+    .container_big .card h1 {
+      text-align: center;
+      /* font-size: 20px; */
+    }
+
+    #html {
+      position: relative;
+      top: 5%;
+      left: -1%;
+    }
+
+    #html::before {
+      content: "";
+      position: absolute;
+      left: 134%;
+      top: 76%;
+      width: 132%;
+      height: 20px;
+      box-sizing: border-box;
+      border-bottom: 1px solid rgb(187, 187, 187);
+      transform-origin: bottom center;
+      transform: rotateZ(12deg) scale(1.414);
+      animation: slash 5s infinite ease;
+    }
+
+    #js {
+      position: relative;
+      top: 0%;
+      left: 5%;
+    }
+
+    #js::before {
+      content: "";
+      position: absolute;
+      left: 113%;
+      top: 34%;
+      width: 107%;
+      height: 20px;
+      box-sizing: border-box;
+      border-bottom: 1px solid rgb(187, 187, 187);
+      transform-origin: bottom center;
+      transform: rotateZ(176deg) scale(1.414);
+      animation: slash 5s infinite ease;
+    }
+
+    #jq {
+      position: absolute;
+      top: 88%;
+      left: 18%;
+    }
+
+    #jq::before {
+      content: "";
+      position: absolute;
+      left: 91%;
+      top: 8%;
+      width: 63%;
+      height: 20px;
+      box-sizing: border-box;
+      border-bottom: 1px solid rgb(187, 187, 187);
+      transform-origin: bottom center;
+      transform: rotateZ(147deg) scale(1.414);
+      animation: slash 5s infinite ease;
+    }
+
+    #css {
+      position: absolute;
+      top: -6%;
+      left: 21%;
+    }
+
+    #css::before {
+      content: "";
+      position: absolute;
+      left: 87%;
+      top: 69%;
+      width: 54%;
+      height: 8%;
+      box-sizing: border-box;
+      border-bottom: 1px solid rgb(187, 187, 187);
+      transform-origin: bottom center;
+      transform: rotateZ(36deg) scale(1.414);
+      animation: slash 5s infinite ease;
+    }
+
+    #bootstrap {
+      position: absolute;
+      top: -7%;
+      left: 66%;
+    }
+
+    #bootstrap::before {
+      content: "";
+      position: absolute;
+      left: -30%;
+      top: 68%;
+      width: 46%;
+      height: 20px;
+      box-sizing: border-box;
+      border-bottom: 1px solid rgb(187, 187, 187);
+      transform-origin: bottom center;
+      transform: rotateZ(141deg) scale(1.414);
+      animation: slash 5s infinite ease;
+    }
+
+    #sass {
+      position: absolute;
+      top: 30%;
+      left: 85%;
+    }
+
+    #sass::before {
+      content: "";
+      position: absolute;
+      right: 134%;
+      top: 48%;
+      width: 92%;
+      height: 20px;
+      box-sizing: border-box;
+      border-bottom: 1px solid rgb(187, 187, 187);
+      transform-origin: bottom center;
+      transform: rotateZ(171deg) scale(1.414);
+      animation: slash 5s infinite ease;
+    }
+
+    #vue {
+      position: absolute;
+      top: 80%;
+      left: 72%;
+    }
+
+    #vue::before {
+      content: "";
+      position: absolute;
+      right: 91%;
+      top: 15%;
+      width: 55%;
+      height: 20px;
+      box-sizing: border-box;
+      border-bottom: 1px solid rgb(187, 187, 187);
+      transform-origin: bottom center;
+      transform: rotateZ(196deg) scale(1.414);
+      animation: slash 5s infinite ease;
+    }
+
+
+    #logo {
+      position: absolute;
+      width: 28%;
+      top: 70%;
+      height: 20%;
+      left: 38%;
+      transform: translateY(-50%);
+      text-align: center;
+    }
+
+    #logo img {
+      margin: auto;
+      width: 70%;
+    }
+
+    @media (max-width:576px) {
+      .container_small {
+        display: show;
+      }
+
+      .container_big {
+        display: none;
+      }
+    }
+
+    @media (min-width:576px) {
+      body {
+        overflow: hidden;
+      }
+
+      .container_small {
+        display: none;
+      }
+
+      .container_big .card {
+        width: calc(13% + 1vw);
+      }
+
+      h1 {
+        font-size: 4vh;
+      }
+
+      #logo {
+        width: calc(25.5% + 1vw);
+      }
+
+      #logo h3 {
+        font-size: 3vh;
+      }
+
+      #logo p {
+        font-size: 2vh;
+      }
+
+    }
+  </style>
+</head>
+
+
+<body>
+  <div class="container_small">
+    <div class="card">
+      <img src="https://wdaweb.github.io/index_assets/img/wda.png" class="logo">
+      <h1>從零開始的網頁設計課程</h1>
+      <p>轉職網頁開發人員　掌握就業必備職能</p>
+      <p>由淺入深學習技術　強化職場的競爭力</p>
+      <hr>
+    </div>
+    <div class="card">
+      <img src="https://wdaweb.github.io/index_assets/img/html.jpg">
+      <h1>Html</h1>
+      <p>超文本標記語⾔（英語：HyperText Markup Language，簡稱：HTML）是⼀種⽤於建立網⾴的標準標記語⾔。 HTML 是⼀種基礎技術，常與 CSS、JavaScript
+        ⼀起被眾多網站⽤於設計賞⼼悅⽬的網⾴、網⾴應⽤程式以及⾏ 動應⽤程式的使⽤者介⾯。網⾴瀏覽器可以讀取 HTML 檔案，並將其彩現成視覺化網⾴。HTML 描述了⼀個網站
+        的結構語意隨著線索的呈現，使之成為⼀種標記語⾔⽽非程式語⾔。</p>
+      <hr>
+    </div>
+    <div class="card">
+      <img src="https://wdaweb.github.io/index_assets/img/css.jpg">
+      <h1>CSS3</h1>
+      <p>層疊樣式表（英語：Cascading Style Sheets，簡寫CSS），⼜稱串樣式列表、級聯樣式表、串接樣式表、階層式樣 式表，⼀種⽤來為結構化文件（如 HTML 文件或 XML
+        應⽤）添加樣式（字型、間距和顏⾊等）的電腦語⾔，由 W3C 定義和維護。⽬前最新版本是 CSS2.1，為 W3C 的推薦標準。CSS3 現在已被⼤部分現代瀏覽器⽀援，⽽下 ⼀版的 CSS4 仍在開發中。</p>
+      <hr>
+
+    </div>
+    <div class="card">
+      <img src="https://wdaweb.github.io/index_assets/img/js.jpg">
+      <h1>JavaScript</h1>
+      <p>
+        JavaScript（通常縮寫為JS）是一門基於原型和頭等函式的多範式進階直譯程式語言[8][9]，它支援物件導向程式設計、指令式編程和函式語言程式設計。它提供方法來操控文字、陣列、日期以及正規表示式等。不支援I/O，比如網路、儲存和圖形等，但這些都可以由它的宿主環境提供支援。它由ECMA（歐洲電腦製造商協會）透過ECMAScript實作語言的標準化[8]。目前，它被世界上的絕大多數網站所使用，也被世界主流瀏覽器（Chrome、IE、Firefox、Safari和Opera）所支援。
+      </p>
+      <hr>
+
+    </div>
+    <div class="card">
+      <img src="https://wdaweb.github.io/index_assets/img/jq.jpg">
+      <h1>jQuery</h1>
+      <p>jQuery是一套跨瀏覽器的JavaScript函式庫，用於簡化HTML與JavaScript之間的操作。[3]約翰·雷西格（John Resig）在2006年1月的BarCamp NYC上釋出了第一個版本。目前由Dave
+        Methvin領導的團隊進行開發。全球前10,000個存取最高的網站中，有65%使用了jQuery，是曾經最受歡迎的JavaScript函式庫[4][5]。</p>
+      <hr>
+    </div>
+    <div class="card">
+      <img src="https://wdaweb.github.io/index_assets/img/bs.jpg">
+      <h1>Bootstrap</h1>
+      <p>
+        Bootstrap是一組用於網站和網路應用程式開發的開源前端（所謂「前端」，指的是展現給終端使用者的介面。與之對應的「後端」是在伺服器上面執行的代碼）框架，包括HTML、CSS及JavaScript的框架，提供字體排印、表單、按鈕、導航及其他各種元件及Javascript擴充套件，旨在使動態網頁和Web應用的開發更加容易。
+      </p>
+      <hr>
+    </div>
+    <div class="card">
+      <img src="https://wdaweb.github.io/index_assets/img/vue.jpg">
+      <h1>Vue</h1>
+      <p>Vue.js（/vjuː/，簡稱Vue）是一個用於建立使用者介面的開源MVVM前端JavaScript框架，也是一個建立單頁應用的Web應用框架[4]。Vue.js由尤雨溪建立，由他和其他活躍的核心團隊成員維護[5]。
+      </p>
+      <hr>
+    </div>
+    <div class="card">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sass_Logo_Color.svg/1200px-Sass_Logo_Color.svg.png">
+      <h1>CSS3</h1>
+      <p>Sass（英文全稱：Syntactically Awesome Stylesheets）是一個最初由Hampton Catlin設計並由Natalie
+        Weizenbaum開發的層疊樣式表語言。[2][3]在開發最初版本之後，Weizenbaum和Chris
+        Eppstein繼續通過SassScript來繼續擴充Sass的功能。SassScript是一個在Sass檔案中使用的小型手稿語言。</p>
+    </div>
+  </div>
+  <div class="container_big">
+    <div class="card" id="html">
+      <img src="https://wdaweb.github.io/index_assets/img/html.jpg" alt="">
+      <h1>Html</h1>
+    </div>
+    <div class="card" id="js">
+      <img src="https://wdaweb.github.io/index_assets/img/js.jpg" alt="">
+      <h1>JavaScript</h1>
+    </div>
+    <div class="card" id="jq">
+      <h1>jQuery</h1>
+      <img src="https://wdaweb.github.io/index_assets/img/jq.jpg" alt="">
+    </div>
+    <div class="card" id="css">
+      <img src="https://wdaweb.github.io/index_assets/img/css.jpg" alt="">
+      <h1>CSS3</h1>
+    </div>
+    <div class="card" id="logo">
+      <img src="https://wdaweb.github.io/index_assets/img/wda.png" alt="">
+      <h1>泰山職訓局</h1>
+      <h3>從零開始的網頁設計課程</h3>
+      <p>轉職網頁開發人員　掌握就業必備職能</p>
+      <p>由淺入深學習技術　強化職場的競爭力</p>
+    </div>
+    <div class="card" id="bootstrap">
+      <img src="https://wdaweb.github.io/index_assets/img/bs.jpg" alt="">
+      <h1>Bootstrap</h1>
+    </div>
+    <div class="card" id="vue">
+      <img src="https://wdaweb.github.io/index_assets/img/vue.jpg" alt="">
+      <h1>Vue.js</h1>
+    </div>
+    <div class="card" id="sass">
+      <img src="
+        https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sass_Logo_Color.svg/1200px-Sass_Logo_Color.svg.png"
+        alt="">
+      <h1>Sass</h1>
+    </div>
+  </div>
+
+
+</body>
+
+</html>
